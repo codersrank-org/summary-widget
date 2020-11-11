@@ -1,0 +1,26 @@
+{
+  "name": "@codersrank/summary",
+  "version": "0.9.4",
+  "description": "Codersrank Summary Widget",
+  "main": "cjs/codersrank-summary.js",
+  "module": "esm/codersrank-summary.js",
+  "jsnext:main": "esm/codersrank-summary.js",
+  "browser": "codersrank-summary.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codersrank-org/summary-widget.git"
+  },
+  "author": "CodersRank Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codersrank-org/summary-widget/issues"
+  },
+  "homepage": "https://github.com/codersrank-org/summary-widget#readme",
+  "keywords": [
+    "codersrank",
+    "codersrank-widget",
+    "profile",
+    "cv",
+    "web component"
+  ]
+}

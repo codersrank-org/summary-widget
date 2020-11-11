@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodersRank Summary Widget</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Open Sans, Helvetica, Helvetica Neue, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    main {
+      max-width: 960px;
+      padding: 0 40px;
+      margin: 40px auto;
+    }
+
+    .customized {
+      --border: 1px solid rgba(0, 0, 0, 0.1);
+      --bg-color: #f2f3f4;
+      --border-radius: 10px;
+      --header-bg-color: #fff;
+      --header-text-color: #000;
+      --header-padding: 16px;
+      --avatar-size: 120px;
+      --name-font-size: 24px;
+      --rank-font-size: 18px;
+      --badges-padding: 16px;
+      --badge-padding: 8px;
+      --badge-margin: 16px;
+      --badge-border-radius: 8px;
+      --badge-rank-font-size: 14px;
+      --badge-technology-font-size: 18px;
+      --badge-location-font-size: 14px;
+      --badge-icon-size: 32px;
+      --badge-border: 1px solid rgba(0, 0, 0, 0.1);
+      --badge-box-shadow: none;
+    }
+
+    .dark {
+      padding: 20px;
+      background: #000;
+      color: #fff;
+      margin: 20px 0 0;
+    }
+
+    .dark codersrank-summary {
+      --header-bg-color: #333;
+      --bg-color: #222;
+      --badge-bg-color: #333;
+      --badge-text-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>CodersRank Summary Widget</h1>
+    <p>
+      <codersrank-summary username="nolimits4web"></codersrank-summary>
+    </p>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio vitae voluptates deserunt dolor blanditiis
+      eligendi dignissimos odio iusto magni vel! Minus laboriosam, commodi eum esse et cupiditate non doloremque
+      quisquam.
+    </p>
+    <h2>Two badges</h2>
+    <p>
+      <codersrank-summary badges="2" username="nolimits4web"></codersrank-summary>
+    </p>
+    <h2>No badges</h2>
+    <p>
+      <codersrank-summary badges="0" username="nolimits4web"></codersrank-summary>
+    </p>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio vitae voluptates deserunt dolor blanditiis
+      eligendi dignissimos odio iusto magni vel! Minus laboriosam, commodi eum esse et cupiditate non doloremque
+      quisquam.
+    </p>
+    <h2>Responsive with auto layout</h2>
+    <p style="display: flex;">
+      <span style="width: calc((100% - 30px) / 3);">
+        <codersrank-summary username="nolimits4web"></codersrank-summary>
+      </span>
+      <span style="width: calc((100% - 30px) / 3); margin: 0 15px;">
+        <codersrank-summary username="peti2001"></codersrank-summary>
+      </span>
+      <span style="width: calc((100% - 30px) / 3);">
+        <codersrank-summary username="alimgiray"></codersrank-summary>
+      </span>
+    </p>
+    <h2>Forced vertical layout</h2>
+    <p>
+      <codersrank-summary username="nolimits4web" layout="vertical" style="max-width: 300px;"></codersrank-summary>
+    </p>
+
+    <h2>Customized</h2>
+    <codersrank-summary username="nolimits4web" class="customized" badge-min-width="160" min-width="400">
+    </codersrank-summary>
+
+    <div class="dark">
+      <h2>Dark customized</h2>
+      <p>
+        Esse, quisquam possimus quasi vero eligendi amet nobis ullam sequi assumenda veniam ex quae ab fuga reiciendis
+        voluptatum natus deserunt beatae porro, autem ad! Eveniet tenetur voluptate consectetur expedita
+        necessitatibus?
+      </p>
+      <p style="display: flex;">
+        <span style="width: calc((100% - 15px) / 2);">
+          <codersrank-summary username="nolimits4web"></codersrank-summary>
+        </span>
+        <span style="width: calc((100% - 15px) / 2); margin-left: 15px;">
+          <codersrank-summary username="peti2001">
+          </codersrank-summary>
+        </span>
+      </p>
+      <p>
+        Tempore fugit architecto odio omnis reprehenderit rem molestiae, vero quisquam natus numquam, totam optio?
+        Deserunt voluptatibus recusandae vel dolor? Quis perferendis sint iure adipisci rerum, minus ipsa omnis
+        doloribus animi.
+      </p>
+      <codersrank-summary badges="0" username="nolimits4web"></codersrank-summary>
+      <p>
+        Recusandae illo labore reiciendis, minus fugiat fugit sint iure magni facere nisi, tempora ipsum itaque
+        facilis repellendus natus quos harum assumenda autem aut voluptatum quo sed aliquid! Hic, delectus id!
+      </p>
+      <p>
+        Aspernatur nostrum, maxime cum soluta iusto iure beatae officia ipsum temporibus itaque? Nesciunt
+        necessitatibus sed atque deserunt iste itaque esse inventore rem. Deleniti nemo, velit molestiae accusantium
+        minima eveniet perferendis.
+      </p>
+    </div>
+  </main>
+  <script src="codersrank-summary.js"></script>
+</body>
+
+</html>

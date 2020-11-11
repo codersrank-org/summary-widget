@@ -1,0 +1,218 @@
+:host {
+  --bg-color: #edf1f3;
+  --border: none;
+  --border-radius: 4px;
+  --header-padding: 8px;
+  --header-bg-color: #72a0a8;
+  --header-text-color: #fff;
+  --avatar-size: 80px;
+  --name-font-size: inherit;
+  --name-font-weight: bold;
+  --rank-font-size: inherit;
+  --preloader-color: #72a0a8;
+  --badges-padding: 8px;
+  --badge-border-radius: 4px;
+  --badge-bg-color: #fff;
+  --badge-box-shadow: 0px 1px 2px rgba(23, 36, 50, 0.3);
+  --badge-border: none;
+  --badge-margin: 8px;
+  --badge-padding: 4px;
+  --badge-text-color: #000;
+  --badge-rank-font-size: 0.85em;
+  --badge-rank-font-weight: bold;
+  --badge-icon-size: 24px;
+  --badge-technology-font-weight: 600;
+  --badge-technology-font-size: inherit;
+  --badge-location-font-size: 0.85em;
+  --badge-location-font-weight: normal;
+  width: 100%;
+  display: block;
+}
+.codersrank-summary {
+  position: relative;
+  line-height: 1.5;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: var(--border);
+  position: relative;
+  display: block;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  font-variant: none;
+  font-style: normal;
+  font-weight: normal;
+  text-shadow: none;
+
+  &-head {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--header-padding);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    text-align: left;
+    &-content {
+      width: 100%;
+      flex-shrink: 10;
+      min-width: 0;
+    }
+    &-name {
+      font-size: var(--name-font-size);
+      font-weight: var(--name-font-weight);
+    }
+    &-rank {
+      font-size: var(--rank-font-size);
+    }
+    &-only {
+      border-radius: var(--border-radius);
+    }
+  }
+  &-avatar {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+  &-badges {
+    padding: var(--badges-padding);
+  }
+  &-badge {
+    padding: var(--badge-padding);
+    width: 100%;
+    flex-shrink: 10;
+    min-width: 0;
+    border-radius: var(--badge-border-radius);
+    box-shadow: var(--badge-box-shadow);
+    border: var(--badge-border);
+    text-align: center;
+    color: var(--badge-text-color);
+    background: var(--badge-bg-color);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  &-horizontal {
+    .codersrank-summary-badges {
+      display: flex;
+    }
+    .codersrank-summary-badge + .codersrank-summary-badge {
+      margin-left: var(--badge-margin);
+    }
+  }
+  &-vertical {
+    .codersrank-summary-avatar {
+      margin-right: 0;
+    }
+    .codersrank-summary-head {
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .codersrank-summary-badge + .codersrank-summary-badge {
+      margin-top: var(--badge-margin);
+    }
+  }
+  &-badge-rank {
+    font-size: var(--badge-rank-font-size);
+    font-weight: var(--badge-rank-font-weight);
+  }
+  &-badge-location {
+    margin-top: auto;
+    line-height: 1.2;
+    font-size: var(--badge-location-font-size);
+    font-weight: var(--badge-location-font-weight);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-badge-technology {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--badge-technology-font-size);
+    font-weight: var(--badge-technology-font-weight);
+  }
+  &-badge-technology img {
+    max-width: var(--badge-icon-size);
+    max-height: var(--badge-icon-size);
+    margin-right: 6px;
+  }
+  &-badge-icon {
+    width: var(--badge-icon-size);
+    height: var(--badge-icon-size);
+    margin-right: 6px;
+  }
+  &-badge-icon {
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  &-badge-name {
+    flex-shrink: 10;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-badges-vertical {
+    .codersrank-summary-badge-technology {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .codersrank-summary-badge-technology img {
+      margin-right: 0;
+      margin-bottom: 2px;
+      max-width: var(--badge-icon-size);
+      max-height: var(--badge-icon-size);
+    }
+    .codersrank-summary-badge-icon {
+      margin-right: 0;
+      margin-bottom: 2px;
+      width: var(--badge-icon-size);
+      height: var(--badge-icon-size);
+    }
+  }
+  &-badges-horizontal-wide {
+  }
+  &-placeholder {
+    pointer-events: none;
+    .codersrank-summary-head,
+    .codersrank-summary-badges {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &-preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+    border: 3px solid var(--preloader-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: preloader 1s infinite linear;
+  }
+}
+
+@keyframes preloader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
