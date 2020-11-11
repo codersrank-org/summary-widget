@@ -7,6 +7,7 @@
     "watch:dev": "cross-env NODE_ENV=development node scripts/watch",
     "watch:prod": "cross-env NODE_ENV=production node scripts/watch",
     "dev": "npm run build:dev && concurrently --kill-others \"npm run serve\" \"npm run watch:dev\" ",
+    "api": "node ./api/dev",
     "serve": "serve -l tcp://0.0.0.0:5000",
     "prettier": "prettier \"**/*.+(js|json|scss|css|less|ts|svelte|jsx)\"",
     "format": "npm run prettier -- --write",
@@ -52,5 +53,8 @@
     "rollup": "^2.32.0",
     "serve": "^11.3.2",
     "terser": "^5.3.6"
+  },
+  "dependencies": {
+    "puppeteer": "^5.4.1"
   }
 }
