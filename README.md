@@ -57,7 +57,7 @@ Widget supports following properties as HTML element attributes:
 For example:
 
 ```html
-<codersrank-summary username="YOUR_USERNAME" logos></codersrank-summary>
+<codersrank-summary username="YOUR_USERNAME" layout="vertical"></codersrank-summary>
 ```
 
 ## Styling
