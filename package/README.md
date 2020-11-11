@@ -1,6 +1,6 @@
 # Codersrank Summary Widget
 
-Codersrank Summary Widget is a web component that allows you easily integrate work experience information from your [CodersRank](https://codersrank.io) profile to your personal website:
+Codersrank Summary Widget is a web component that allows you integrate widget with your [CodersRank](https://codersrank.io) profile summary to your personal website:
 
 <img src="preview.png" />
 
