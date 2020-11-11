@@ -1,6 +1,6 @@
 {
   "name": "@codersrank/summary",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Codersrank Summary Widget",
   "main": "cjs/codersrank-summary.js",
   "module": "esm/codersrank-summary.js",
@@ -22,5 +22,8 @@
     "profile",
     "cv",
     "web component"
-  ]
+  ],
+  "dependencies": {
+    "puppeteer": "^5.4.1"
+  }
 }

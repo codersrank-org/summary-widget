@@ -1,5 +1,14 @@
 # Codersrank Summary Widget
 
+- [Install from NPM](#install-from-npm)
+- [Install from CDN](#install-from-cdn)
+- [Usage](#usage)
+- [Widget Attributes](#widget-attributes)
+- [Styling](#styling)
+- [Use As Image](#use-as-image)
+- [Contribution](#contribution)
+- [Licence](#Licence)
+
 Codersrank Summary Widget is a web component that allows you integrate widget with your [CodersRank](https://codersrank.io) profile summary to your personal website:
 
 <img src="preview.png" />
@@ -57,7 +66,7 @@ Widget supports following properties as HTML element attributes:
 For example:
 
 ```html
-<codersrank-summary username="YOUR_USERNAME" logos></codersrank-summary>
+<codersrank-summary username="YOUR_USERNAME" layout="vertical"></codersrank-summary>
 ```
 
 ## Styling
@@ -103,6 +112,33 @@ codersrank-summary {
   --name-font-size: 20px;
 }
 ```
+
+## Use As Image
+
+It is also possible to insert Summary widget as an image. It is useful in places where you can't integrate web component, or for example on your GitHub profile README.md page.
+
+Image URL is the following:
+
+```
+https://cr-summary-widget.azurewebsites.net/api/api?username=YOUR_USERNAME
+```
+
+It accepts all widget attributes as query string parameters, plus one extra parameter:
+
+| Name    | Type     | Default | Description                                                                                                                                                                     |
+| ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `width` | `number` | `480`   | Width of widget element (generated image). Note that generated image has @2x pixel density, so the PNG image will be actually generated in @2x size from the one specified here |
+| `style` | `string` |         | `style` attribute value (here you can specify all CSS variables)                                                                                                                |
+
+For example:
+
+```html
+<img
+  src="https://cr-summary-widget.azurewebsites.net/api/api?username=YOUR_USERNAME&badges=2&show-avatar=false&style=--header-bg-color:%23000;--border-radius:10px"
+/>
+```
+
+Note that you need to URL Encode some of the characters, for example `#` should be `%23` and `#ff0` color should be specified as `%23ff0` in query.
 
 ## Contribution
 
