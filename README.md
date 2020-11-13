@@ -120,7 +120,7 @@ It is also possible to insert Summary widget as an image. It is useful in places
 Image URL is the following:
 
 ```
-https://cr-summary-widget.azurewebsites.net/api/api?username=YOUR_USERNAME
+https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=YOUR_USERNAME
 ```
 
 It accepts all widget attributes as query string parameters, plus one extra parameter:
@@ -134,7 +134,7 @@ For example:
 
 ```html
 <img
-  src="https://cr-summary-widget.azurewebsites.net/api/api?username=YOUR_USERNAME&badges=2&show-avatar=false&style=--header-bg-color:%23000;--border-radius:10px"
+  src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=YOUR_USERNAME&badges=2&show-avatar=false&style=--header-bg-color:%23000;--border-radius:10px"
 />
 ```
 
