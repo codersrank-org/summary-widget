@@ -35,7 +35,9 @@ const getContent = (attrs = {}) => {
 };
 
 const getScreenshot = async (attrs = {}) => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
   const page = await browser.newPage();
   await page.setViewport({ width: 800, height: 600, deviceScaleFactor: 2 });
   await page.setContent(getContent(attrs), { waitUntil: 'networkidle0' });
