@@ -1,11 +1,15 @@
 const puppeteer = require('puppeteer');
 
+const escape = (string = '') => {
+  return string.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+};
+
 const getContent = (attrs = {}) => {
   let attrsString = '';
   Object.keys(attrs).forEach((attrName) => {
     const attrValue = attrs[attrName];
     if (!attrValue) return;
-    attrsString += ` ${attrName}="${attrValue}" `;
+    attrsString += ` ${escape(attrName)}="${escape(attrValue)}" `;
   });
   return /* html */ `
   <!DOCTYPE html>
