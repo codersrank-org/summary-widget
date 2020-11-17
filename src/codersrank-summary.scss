@@ -138,15 +138,17 @@
     font-size: var(--badge-technology-font-size);
     font-weight: var(--badge-technology-font-weight);
   }
-  &-badge-technology img {
-    max-width: var(--badge-icon-size);
-    max-height: var(--badge-icon-size);
-    margin-right: 6px;
-  }
-  &-badge-icon {
+  &-badge-technology-logo {
     width: var(--badge-icon-size);
     height: var(--badge-icon-size);
     margin-right: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-badge-technology img {
+    max-width: var(--badge-icon-size);
+    max-height: var(--badge-icon-size);
   }
   &-badge-icon {
     font-size: 12px;
@@ -168,17 +170,9 @@
       justify-content: center;
       align-items: center;
     }
-    .codersrank-summary-badge-technology img {
+    .codersrank-summary-badge-technology-logo {
       margin-right: 0;
       margin-bottom: 2px;
-      max-width: var(--badge-icon-size);
-      max-height: var(--badge-icon-size);
-    }
-    .codersrank-summary-badge-icon {
-      margin-right: 0;
-      margin-bottom: 2px;
-      width: var(--badge-icon-size);
-      height: var(--badge-icon-size);
     }
   }
   &-badges-horizontal-wide {

@@ -1,6 +1,4 @@
 import { formatScore } from './format-score';
-import { iconImage } from './icons';
-import { stringToColor } from './string-to-color';
 
 export const render = ({
   data,
@@ -53,11 +51,9 @@ export const render = ({
         <div class="codersrank-summary-badge">
           <div class="codersrank-summary-badge-rank">Top ${badge.rank}</div>
           <div class="codersrank-summary-badge-technology">
-            ${
-              iconImage(badge.language)
-                ? `<img src="${iconImage(badge.language)}"/>`
-                : `<span class="codersrank-summary-badge-icon" style="background-color: ${stringToColor(badge.language)}; color: #fff">${badge.language[0].toUpperCase()}</span>`
-            }
+            <div class="codersrank-summary-badge-technology-logo">
+              <img src="https://icon-widget.codersrank.io/api/${encodeURIComponent(badge.language)}"/>
+            </div>
             <span class="codersrank-summary-badge-name">${badge.language}</span>
           </div>
           <div class="codersrank-summary-badge-location">${badge.location}</div>
