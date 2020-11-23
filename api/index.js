@@ -46,7 +46,7 @@ const getScreenshot = async (attrs = {}) => {
   await page.setViewport({ width: 800, height: 600, deviceScaleFactor: 2 });
   await page.setContent(getContent(attrs), { waitUntil: 'networkidle0' });
   const widgetElement = await page.$('codersrank-summary');
-  const screenshotBuffer = await widgetElement.screenshot();
+  const screenshotBuffer = await widgetElement.screenshot({ omitBackground: true });
   await browser.close();
   return screenshotBuffer;
 };
