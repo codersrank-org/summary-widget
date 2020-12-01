@@ -144,6 +144,14 @@ class CodersrankSummary extends HTMLElement {
     this.setAttribute('badge-min-width', value);
   }
 
+  get branding() {
+    return this.getAttribute('branding') !== 'false';
+  }
+
+  set branding(value) {
+    this.setAttribute('branding', value);
+  }
+
   render() {
     const {
       username,
@@ -156,6 +164,7 @@ class CodersrankSummary extends HTMLElement {
       badgesLayout,
       showAvatar,
       showHeader,
+      branding,
     } = this;
     const ctx = {
       username,
@@ -165,6 +174,7 @@ class CodersrankSummary extends HTMLElement {
       badgesLayout,
       showAvatar,
       showHeader,
+      branding,
     };
 
     if (!username || !mounted) return;
@@ -177,13 +187,21 @@ class CodersrankSummary extends HTMLElement {
     }
 
     let widgetEl = shadowEl.querySelector('.codersrank-summary');
+    let brandingEl = shadowEl.querySelector('.codersrank-summary-branding');
     if (widgetEl) {
       widgetEl.parentNode.removeChild(widgetEl);
     }
+    if (brandingEl) {
+      brandingEl.parentNode.removeChild(brandingEl);
+    }
     widgetEl = this.tempDiv.querySelector('.codersrank-summary');
+    brandingEl = this.tempDiv.querySelector('.codersrank-summary-branding');
     if (!widgetEl) return;
     this.widgetEl = widgetEl;
     shadowEl.appendChild(widgetEl);
+    if (brandingEl) {
+      shadowEl.appendChild(brandingEl);
+    }
   }
 
   loadAndRender() {

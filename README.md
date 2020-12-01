@@ -64,6 +64,7 @@ Widget supports following properties as HTML element attributes:
 | `show-header`     | `boolean` | `true`   | Defines whether to show widget header or not                                                                                                                     |
 | `min-width`       | `number`  | `300`    | Widget minimum width for `auto` layout to change widget layout from horozontal to vertical                                                                       |
 | `badge-min-width` | `number`  | `100`    | Badge minimal width to change badge inner layout from horozontal to vertical layout                                                                              |
+| `branding`        | `boolean` | `true`   | Displays "Powered by CodersRank" link                                                                                                                            |
 
 For example:
 
@@ -105,6 +106,7 @@ There are following CSS Custom Properties are available:
 | `--badge-technology-font-size`   | `inherit `                           |
 | `--badge-location-font-size`     | `0.85em `                            |
 | `--badge-location-font-weight`   | `normal `                            |
+| `--branding-text-color`          | `inherit `                           |
 
 For example, to change header background color to `white` and name font-size to `20px`, add this to CSS stylesheet:
 

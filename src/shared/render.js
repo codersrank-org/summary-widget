@@ -1,3 +1,4 @@
+import { codersrRankLogo } from './codersrank-logo';
 import { formatScore } from './format-score';
 
 export const render = ({
@@ -9,6 +10,7 @@ export const render = ({
   showAvatar,
   showHeader,
   loading,
+  branding,
 } = {}) => {
   const isNotRegistered =
     data && (data.status === 'not_found' || data.status === 'generated');
@@ -62,5 +64,13 @@ export const render = ({
     </div>
     ` : ''}
   </${tag}>
+  ${branding ? /* html */`
+  <div class="codersrank-summary-branding">
+    <a href="https://codersrank.io" target="_blank" rel="noopener noreferrer">
+      <span>Powered by </span>
+      ${codersrRankLogo}
+    </a>
+  </div>
+  ` : ''}
 `;
 };
