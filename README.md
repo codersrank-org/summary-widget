@@ -62,8 +62,8 @@ Widget supports following properties as HTML element attributes:
 | `badges`          | `number`  | `3`      | Number (from `0` to `3`) of highlighted badges to display.                                                                                                       |
 | `show-avatar`     | `boolean` | `true`   | Defines whether to show avatar or not                                                                                                                            |
 | `show-header`     | `boolean` | `true`   | Defines whether to show widget header or not                                                                                                                     |
-| `min-width`       | `number`  | `300`    | Widget minimum width for `auto` layout to change widget layout from horozontal to vertical                                                                       |
-| `badge-min-width` | `number`  | `100`    | Badge minimal width to change badge inner layout from horozontal to vertical layout                                                                              |
+| `min-width`       | `number`  | `300`    | Widget minimum width for `auto` layout to change widget layout from horizontal to vertical                                                                       |
+| `badge-min-width` | `number`  | `100`    | Badge minimal width to change badge inner layout from horizontal to vertical layout                                                                              |
 | `branding`        | `boolean` | `true`   | Displays "Powered by CodersRank" link                                                                                                                            |
 
 For example:
