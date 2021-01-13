@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { codersrRankLogo } from './codersrank-logo';
 import { formatScore } from './format-score';
 
@@ -15,11 +16,12 @@ export const render = ({
   const isNotRegistered =
     data && (data.status === 'not_found' || data.status === 'generated');
   const isPlaceholder = loading || isNotRegistered;
-  const { fullName, avatar, worldWideAll, positionWorldWide, totalScore } = data;
+  const { first_name, last_name, avatar_url, total_users, position, total_score } = data;
   if (isNotRegistered) return '';
+  const fullName = [first_name, last_name].filter((l) => !!l).join(' ');
 
   const percentage = Math.min(
-    Math.max(Math.ceil((positionWorldWide / worldWideAll) * 100), 1),
+    Math.max(Math.ceil((position / total_users) * 100), 1),
     100,
   );
   const tag = loading || isNotRegistered ? 'div' : 'a';
@@ -38,12 +40,12 @@ export const render = ({
     ${showHeader ? /* html */ `
     <div class="codersrank-summary-head${!badgesData.length ? ' codersrank-summary-head-only' : ''}">
       ${showAvatar ? /* html */ `
-      <div class="codersrank-summary-avatar" ${avatar ? `style="background-image: url(${avatar})"` : ''}></div>
+      <div class="codersrank-summary-avatar" ${avatar_url ? `style="background-image: url(${avatar_url})"` : ''}></div>
       ` : ''}
       <div class="codersrank-summary-head-content">
         <div class="codersrank-summary-head-name">${fullName || username}</div>
         <div class="codersrank-summary-head-rank"><b>Top ${percentage}%</b> in Worldwide</div>
-        <div class="codersrank-summary-head-rank"><b>${formatScore(totalScore)}</b> CodersRank score</div>
+        <div class="codersrank-summary-head-rank"><b>${formatScore(total_score)}</b> CodersRank score</div>
       </div>
     </div>
     ` : ''}

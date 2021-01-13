@@ -43,6 +43,14 @@ class CodersrankSummary extends HTMLElement {
     return ['username', 'logos', 'grid', 'max-items'];
   }
 
+  get id() {
+    return this.getAttribute('id');
+  }
+
+  set id(value) {
+    this.setAttribute('id', value);
+  }
+
   get username() {
     return this.getAttribute('username');
   }
@@ -205,10 +213,10 @@ class CodersrankSummary extends HTMLElement {
   }
 
   loadAndRender() {
-    const { username } = this;
+    const { username, id } = this;
     this.state = STATE_LOADING;
     this.render();
-    fetchData(username)
+    fetchData(username, id)
       .then((data) => {
         this.data = data;
         this.state = STATE_SUCCESS;

@@ -1,18 +1,43 @@
 const cache = {};
 
-export const fetchData = (username) => {
+export const fetchData = (username, id) => {
   if (cache[username]) return Promise.resolve(cache[username]);
+  if (id && cache[id]) return Promise.resolve(cache[id]);
 
-  return fetch('https://api.codersrank.io/app/candidate/GetScore', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ username }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      cache[username] = data;
+  let endpoint = `https://api.codersrank.io/v2/users/${username || id}/`;
+  if (id) endpoint += '?get_by=id';
+
+  let badgesEndpoint = `https://api.codersrank.io/v2/users/${username || id}/badges`;
+  if (id) badgesEndpoint += '?get_by=id';
+
+  const getUser = () =>
+    fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => res.json());
+
+  const getBadges = () =>
+    fetch(badgesEndpoint, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => res.json());
+
+  return Promise.all([getUser(), getBadges()])
+    .then(([user, badges]) => {
+      // eslint-disable-next-line
+      const data = {
+        ...user,
+        ...badges,
+      };
+      if (id) {
+        cache[id] = data;
+      } else {
+        cache[username] = data;
+      }
       return data;
     })
     .catch((err) => {

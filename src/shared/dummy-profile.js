@@ -1,27 +1,29 @@
 export const dummyProfile = {
-  fullName: 'Placeholder Name',
-  avatar: '',
+  first_name: 'Placeholder',
+  last_name: 'Name',
+  avatar_url: '',
   country: 'Placeholder',
-  worldWideAll: 100,
-  positionWorldWide: 1,
-  totalScore: 5000,
-  badges: {
-    country: {
-      HTML: {
-        visibility: 'highlighted',
-        rank: 1,
-        location: 'World',
-      },
-      JavaScript: {
-        visibility: 'highlighted',
-        rank: 1,
-        location: 'World',
-      },
-      CSS: {
-        visibility: 'highlighted',
-        rank: 1,
-        location: 'World',
-      },
+  total_users: 100,
+  position: 1,
+  total_score: 5000,
+  badges: [
+    {
+      language: 'HTML',
+      visibility: 'highlighted',
+      rank: 1,
+      location_name: 'World',
     },
-  },
+    {
+      language: 'JavaScript',
+      visibility: 'highlighted',
+      rank: 1,
+      location_name: 'World',
+    },
+    {
+      language: 'CSS',
+      visibility: 'highlighted',
+      rank: 1,
+      location_name: 'World',
+    },
+  ],
 };
