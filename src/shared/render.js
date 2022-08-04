@@ -72,6 +72,7 @@ export const render = ({
         </div>
       `;
     }
+    return '';
   }
 
   // prettier-ignore
