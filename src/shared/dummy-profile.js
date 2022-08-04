@@ -12,18 +12,21 @@ export const dummyProfile = {
       visibility: 'highlighted',
       rank: 1,
       location_name: 'World',
+      version: 'v1',
     },
     {
       language: 'JavaScript',
       visibility: 'highlighted',
       rank: 1,
       location_name: 'World',
+      version: 'v1',
     },
     {
       language: 'CSS',
       visibility: 'highlighted',
       rank: 1,
       location_name: 'World',
+      version: 'v1',
     },
   ],
 };

@@ -34,7 +34,9 @@ const buildModule = async (cssContent, format) => {
 
   await exec.promise(`rm -rf ${outputDir}/${format}/*.js`);
   await exec.promise(`rm -rf ${outputDir}/${format}/shared/*.js`);
-  await exec.promise(`MODULES=${format} npx babel src --out-dir ${outputDir}/${format}`);
+  await exec.promise(
+    `cross-env MODULES=${format} npx babel src --out-dir ${outputDir}/${format}`,
+  );
 
   const fileContent = fs
     .readFileSync(`./${outputDir}/${format}/codersrank-summary.js`, 'utf8')

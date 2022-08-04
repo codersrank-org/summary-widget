@@ -23,6 +23,8 @@
   --badge-icon-size: 24px;
   --badge-technology-font-weight: 600;
   --badge-technology-font-size: inherit;
+  --badge-label-font-weight: 600;
+  --badge-label-font-size: 12px;
   --badge-location-font-size: 0.85em;
   --badge-location-font-weight: normal;
   --branding-text-color: inherit;
@@ -96,6 +98,7 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    justify-content: space-between;
   }
   &-horizontal {
     .codersrank-summary-badges {
@@ -123,7 +126,6 @@
     font-weight: var(--badge-rank-font-weight);
   }
   &-badge-location {
-    margin-top: auto;
     line-height: 1.2;
     font-size: var(--badge-location-font-size);
     font-weight: var(--badge-location-font-weight);
@@ -177,6 +179,25 @@
     }
   }
   &-badges-horizontal-wide {
+  }
+  &-badge-seniority &-badge-image {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &-badge-seniority &-badge-label {
+    margin: 8px 0;
+    font-size: var(--badge-label-font-size);
+    font-weight: var(--badge-label-font-weight);
+    line-height: 1.25;
+  }
+  &-badge-seniority &-badge-technology {
+    margin: 0;
   }
   &-placeholder {
     pointer-events: none;

@@ -30,6 +30,50 @@ export const render = ({
       ? ''
       : `href="https://profile.codersrank.io/user/${username}?utm_source=users&utm_medium=banner&utm_campaign=embedded_widget" rel="noreferrer noopener" target="_blank" title="Visit ${username}'s CodersRank profile"`;
 
+  const badgeSeniorityLabel = (label) => {
+    return label
+      .split('')
+      .map((char, index) => {
+        if (char === char.toUpperCase() && index !== 0) return ` ${char}`;
+        return char;
+      })
+      .join('');
+  };
+
+  // prettier-ignore
+  const renderBadge = (badge) => {
+    if (badge.version === 'v1') {
+      return /* html */`
+        <div class="codersrank-summary-badge codersrank-summary-badge-v1">
+          <div class="codersrank-summary-badge-rank">Top ${badge.rank}</div>
+          <div class="codersrank-summary-badge-technology">
+            <div class="codersrank-summary-badge-technology-logo">
+              <img src="https://icon-widget.codersrank.io/api/${encodeURIComponent(badge.language)}"/>
+            </div>
+            <span class="codersrank-summary-badge-name">${badge.language}</span>
+          </div>
+          <div class="codersrank-summary-badge-location">${badge.location}</div>
+        </div>
+      `;
+    }
+    if (badge.version === 'v2') {
+      return /* html */`
+        <div class="codersrank-summary-badge codersrank-summary-badge-v2 codersrank-summary-badge-${badge.badgeFamily.toLowerCase()}">
+          <div class="codersrank-summary-badge-image">
+            <img src="https://profile.codersrank.io/static/badgesV2/${badge.badgeFamily}/${badge.badgeType}.svg" />
+          </div>
+          <div class="codersrank-summary-badge-label">${badgeSeniorityLabel(badge.badgeType)}</div>
+          <div class="codersrank-summary-badge-technology">
+            <div class="codersrank-summary-badge-technology-logo">
+              <img src="https://icon-widget.codersrank.io/api/${encodeURIComponent(badge.language)}"/>
+            </div>
+            <span class="codersrank-summary-badge-name">${badge.language}</span>
+          </div>
+        </div>
+      `;
+    }
+  }
+
   // prettier-ignore
   return /* html */`
     <${tag} ${linkAttrs} class="codersrank-summary codersrank-summary-${layout} codersrank-summary-badges-${badgesLayout} ${isPlaceholder ? ' codersrank-summary-placeholder' : ''}">
@@ -51,18 +95,7 @@ export const render = ({
     ` : ''}
     ${badgesData.length ? /* html */`
     <div class="codersrank-summary-badges">
-      ${badgesData.map((badge) => /* html */`
-        <div class="codersrank-summary-badge">
-          <div class="codersrank-summary-badge-rank">Top ${badge.rank}</div>
-          <div class="codersrank-summary-badge-technology">
-            <div class="codersrank-summary-badge-technology-logo">
-              <img src="https://icon-widget.codersrank.io/api/${encodeURIComponent(badge.language)}"/>
-            </div>
-            <span class="codersrank-summary-badge-name">${badge.language}</span>
-          </div>
-          <div class="codersrank-summary-badge-location">${badge.location}</div>
-        </div>
-      `).join('')}
+      ${badgesData.map(renderBadge).join('')}
     </div>
     ` : ''}
   </${tag}>
