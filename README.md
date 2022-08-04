@@ -104,6 +104,8 @@ There are following CSS Custom Properties are available:
 | `--badge-icon-size`              | `24px `                              |
 | `--badge-technology-font-weight` | `600 `                               |
 | `--badge-technology-font-size`   | `inherit `                           |
+| `--badge-technology-font-weight` | `600 `                               |
+| `--badge-technology-font-size`   | `12px `                              |
 | `--badge-location-font-size`     | `0.85em `                            |
 | `--badge-location-font-weight`   | `normal `                            |
 | `--branding-text-color`          | `inherit `                           |

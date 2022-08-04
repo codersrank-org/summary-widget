@@ -6,15 +6,24 @@ export const formatBadges = ({ data: profileData, badges: maxBadges, loading }) 
     data = dummyProfile;
   }
 
-  return (
-    (data.badges || [])
-      .filter((badge) => badge.visibility === 'highlighted')
-      // eslint-disable-next-line
-      .map(({ language, rank, location_name }) => ({
-        language,
+  /* eslint-disable */
+  const result = (data.badges || [])
+    .filter((badge) => badge.visibility === 'highlighted')
+    .map(
+      ({ language, rank, location_name, version, badgeFamily, badgeType, values }) => ({
+        language: language || values.language,
         rank,
         location: location_name,
-      }))
-      .slice(0, maxBadges)
-  );
+        version,
+        badgeFamily,
+        badgeType,
+      }),
+    )
+    .slice(0, maxBadges);
+  /* eslint-enable */
+  result.sort((a, b) => {
+    if (b.version === 'v1' && a.version === 'v2') return -1;
+    return 0;
+  });
+  return result;
 };
