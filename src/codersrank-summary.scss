@@ -180,7 +180,8 @@
   }
   &-badges-horizontal-wide {
   }
-  &-badge-seniority &-badge-image {
+  &-badge-seniority &-badge-image,
+  &-badge-streak &-badge-image {
     height: 32px;
     display: flex;
     align-items: center;
@@ -190,7 +191,11 @@
       height: 100%;
     }
   }
-  &-badge-seniority &-badge-label {
+  &-badge-streak &-badge-image {
+    height: 40px;
+  }
+  &-badge-seniority &-badge-label,
+  &-badge-streak &-badge-label {
     margin: 8px 0;
     font-size: var(--badge-label-font-size);
     font-weight: var(--badge-label-font-weight);
@@ -198,6 +203,13 @@
   }
   &-badge-seniority &-badge-technology {
     margin: 0;
+  }
+  &-badge-streak &-badge-days {
+    text-transform: uppercase;
+    font-size: var(--badge-label-font-size);
+    opacity: 0.75;
+    margin-top: 4px;
+    margin-bottom: auto;
   }
   &-placeholder {
     pointer-events: none;

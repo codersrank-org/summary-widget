@@ -25,5 +25,11 @@ export const formatBadges = ({ data: profileData, badges: maxBadges, loading }) 
     if (b.version === 'v1' && a.version === 'v2') return -1;
     return 0;
   });
-  return result;
+  const filtered = result.filter((badge) => {
+    if (badge.version === 'v2') {
+      return badge.badgeFamily === 'Seniority' || badge.badgeFamily === 'Streak';
+    }
+    return true;
+  });
+  return filtered;
 };
