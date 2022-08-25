@@ -39,6 +39,15 @@ export const render = ({
       })
       .join('');
   };
+  const badgeStreakLabel = (label) => {
+    return label
+      .split('')
+      .map((char, index) => {
+        if (char === char.toUpperCase() && index !== 0) return ` ${char}`;
+        return char;
+      })
+      .join('');
+  };
 
   // prettier-ignore
   const renderBadge = (badge) => {
@@ -56,7 +65,7 @@ export const render = ({
         </div>
       `;
     }
-    if (badge.version === 'v2') {
+    if (badge.version === 'v2' && badge.badgeFamily === 'Seniority') {
       return /* html */`
         <div class="codersrank-summary-badge codersrank-summary-badge-v2 codersrank-summary-badge-${badge.badgeFamily.toLowerCase()}">
           <div class="codersrank-summary-badge-image">
@@ -72,6 +81,18 @@ export const render = ({
         </div>
       `;
     }
+    if (badge.version === 'v2' && badge.badgeFamily === 'Streak') {
+      return /* html */`
+        <div class="codersrank-summary-badge codersrank-summary-badge-v2 codersrank-summary-badge-${badge.badgeFamily.toLowerCase()}">
+          <div class="codersrank-summary-badge-image">
+            <img src="https://profile.codersrank.io/static/badgesV2/${badge.badgeFamily}/${badge.badgeType}.svg" />
+          </div>
+          <div class="codersrank-summary-badge-days">days</div>
+          <div class="codersrank-summary-badge-label">${badgeStreakLabel(badge.badgeType)}</div>
+        </div>
+      `;
+    }
+    return '';
   }
 
   // prettier-ignore
