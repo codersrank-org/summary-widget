@@ -1,6 +1,6 @@
 {
   "name": "@codersrank/summary",
-  "version": "0.9.11",
+  "version": "0.9.13",
   "description": "Codersrank Summary Widget",
   "main": "cjs/codersrank-summary.js",
   "module": "esm/codersrank-summary.js",
